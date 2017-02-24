@@ -1,3 +1,22 @@
 <h1>
   {{title}}
 </h1>
+<form class="new-link">
+  <h3>Submit link</h3>
+  <div class="field">
+    <label for="title">Title: </label>
+    <input name="title" #newtitle>
+  </div>
+  <div class="field">
+    <label for="link">Link: </label>
+    <input name="link" #newlink>
+  </div>
+  <button (click)="addArticle(newtitle, newlink)">
+    Submit
+  </button>
+</form>
+
+<app-article 
+  *ngFor="let foobar of articles"
+  [article]="foobar">
+</app-article>
